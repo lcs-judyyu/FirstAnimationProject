@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    //MARK: Stored Properties
+    @State var scaleFactor = 1.0
+
+    //MARK: Computed Properties
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Circle()
+            .scaleEffect(scaleFactor)
+            .animation(.easeInOut)
+            .onTapGesture {
+                scaleFactor -= 0.1
+            }
     }
 }
 
